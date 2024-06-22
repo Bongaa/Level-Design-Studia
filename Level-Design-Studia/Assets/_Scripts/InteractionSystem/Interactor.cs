@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,7 +16,18 @@ public class Interactor : MonoBehaviour
         {
             return _hasDoorKey;
         }
+
+        set
+        {
+            _hasDoorKey = value;
+        }
     }
+
+    private void Start()
+    {
+        _hasDoorKey = false;
+    }
+
     void Update()
     {
         CheckForInteract();
