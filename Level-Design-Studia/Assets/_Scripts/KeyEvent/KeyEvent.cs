@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class KeyEvent : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject _holeFillObject;
+    [SerializeField] private GameObject _eventActionPrefab;
 
-    // Update is called once per frame
-    void Update()
+
+    public void TriggerKeyEvent()
     {
+        _holeFillObject.SetActive(false);
         
+        Instantiate(_eventActionPrefab);
     }
 }

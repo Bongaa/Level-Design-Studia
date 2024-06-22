@@ -3,6 +3,7 @@ using UnityEngine;
 public class KeyPickup : MonoBehaviour
 {
     [SerializeField] private GameObject _doorKeyVisual;
+    [SerializeField] private KeyEvent _keyEvent;
 
     private Collider _triggerCollider;
 
@@ -23,5 +24,6 @@ public class KeyPickup : MonoBehaviour
 
             Debug.Log("YOU HAVE PICKED UP A KEY!");
         }
+        _keyEvent.TriggerKeyEvent();
     }
 }
