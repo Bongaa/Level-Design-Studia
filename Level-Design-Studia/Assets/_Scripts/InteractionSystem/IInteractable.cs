@@ -5,5 +5,5 @@ using UnityEngine;
 public interface IInteractable
 {
     public void PlayInteractableAnim();
-    public void ExecuteInteractableAction();
+    public void ExecuteInteractableAction(Interactor interactor);
 }

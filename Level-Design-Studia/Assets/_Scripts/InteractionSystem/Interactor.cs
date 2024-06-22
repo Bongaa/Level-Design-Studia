@@ -7,16 +7,18 @@ public class Interactor : MonoBehaviour
 {
     [SerializeField] private Collider _playerCollider;
     [SerializeField] private int _maxCastDistance;
-
+    [SerializeField] private bool _hasDoorKey;
 
     private bool _interactColliderHitDetect;
     private RaycastHit _interactHit;
-    
-    void Start()
-    {
-        
-    }
 
+    public bool HasDoorKey 
+    {
+        get
+        {
+            return _hasDoorKey;
+        }
+    }
     void Update()
     {
         CheckForInteract();
@@ -39,7 +41,7 @@ public class Interactor : MonoBehaviour
 
                 if (Keyboard.current.eKey.wasPressedThisFrame)
                 {
-                    interactable.ExecuteInteractableAction();
+                    interactable.ExecuteInteractableAction(this);
                 }
             }
             else

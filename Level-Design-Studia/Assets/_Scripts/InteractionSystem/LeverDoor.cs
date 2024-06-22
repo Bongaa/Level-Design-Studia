@@ -9,7 +9,13 @@ public class LeverDoor : MonoBehaviour
 
     public void Execute()
     {
+        OpenDoor();
+    }
+
+    private void OpenDoor()
+    {
         Debug.Log("OPENING DOOR WITH A LEVER");
+        _doorAnimator.SetBool("OpenDoor", true);
     }
 
 }
