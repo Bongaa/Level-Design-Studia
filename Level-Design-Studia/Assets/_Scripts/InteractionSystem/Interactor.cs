@@ -1,3 +1,4 @@
+using StarterAssets;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +8,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private int _maxCastDistance;
     [SerializeField] private bool _hasDoorKey;
 
+    private FirstPersonController firstPersonController;
     private bool _interactColliderHitDetect;
     private RaycastHit _interactHit;
 
@@ -21,6 +23,11 @@ public class Interactor : MonoBehaviour
         {
             _hasDoorKey = value;
         }
+    }
+
+    private void Awake()
+    {
+        firstPersonController = GetComponent<FirstPersonController>();
     }
 
     private void Start()
