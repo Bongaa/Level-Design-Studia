@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1577609632647162967}
   - component: {fileID: 8426384250333507729}
   - component: {fileID: 2376880051851034806}
+  - component: {fileID: 4128449896762905691}
   m_Layer: 0
   m_Name: Lever_Prefab_Locked
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87332411bbf0be3468094af3dceafc7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lever: {fileID: 4128449896762905691}
   _doorObject: {fileID: 0}
   _isLockedWithKey: 1
 --- !u!65 &2376880051851034806
@@ -70,6 +72,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 1, z: 1}
   m_Center: {x: 0, y: 0.6, z: 0.28}
+--- !u!114 &4128449896762905691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2575938327731363396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfd7118d34f6d546afc5f46f3f3bdcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7727883797297684363
 GameObject:
   m_ObjectHideFlags: 0
