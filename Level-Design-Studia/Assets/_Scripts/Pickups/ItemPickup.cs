@@ -4,7 +4,8 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
     [SerializeField] private PickupType _pickupType;
-    [SerializeField] private GameObject _pickupItem;
+    [Tooltip("For Weapon Type only")]
+    [SerializeField] private GameObject _pickupWeaponItem;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,12 +21,12 @@ public class ItemPickup : MonoBehaviour
 
                         if (weaponHandlerRef.childCount <= 0)
                         {
-                            Instantiate(_pickupItem, weaponHandlerRef);
+                            Instantiate(_pickupWeaponItem, weaponHandlerRef);
                         }
                         else
                         {
                             Destroy(weaponHandlerRef.GetChild(0).gameObject);
-                            Instantiate(_pickupItem, weaponHandlerRef);
+                            Instantiate(_pickupWeaponItem, weaponHandlerRef);
                         }
                     }
                     break;

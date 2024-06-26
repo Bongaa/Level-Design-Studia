@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pickupType: 0
-  _pickupItem: {fileID: 452036021353154839}
+  _pickupWeaponItem: {fileID: 452036021353154839}
 --- !u!65 &4562031520523535034
 BoxCollider:
   m_ObjectHideFlags: 0
