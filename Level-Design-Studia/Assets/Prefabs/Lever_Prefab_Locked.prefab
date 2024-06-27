@@ -51,6 +51,7 @@ MonoBehaviour:
   _lever: {fileID: 4128449896762905691}
   _doorObject: {fileID: 0}
   _isLockedWithKey: 1
+  _leverAnimator: {fileID: 5809220570440302440}
 --- !u!65 &2376880051851034806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -70,8 +71,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.6, z: 0.28}
+  m_Size: {x: 0.47, y: 1, z: 0.48}
+  m_Center: {x: 0, y: 0.6, z: 0.07}
 --- !u!114 &4128449896762905691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdfd7118d34f6d546afc5f46f3f3bdcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isPulled: 0
+  _connectedDiode: {fileID: 0}
 --- !u!1 &7727883797297684363
 GameObject:
   m_ObjectHideFlags: 0

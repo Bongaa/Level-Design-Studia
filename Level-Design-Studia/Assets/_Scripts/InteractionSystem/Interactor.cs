@@ -43,7 +43,7 @@ public class Interactor : MonoBehaviour
     private void CheckForInteract()
     {
         //_interactColliderHitDetect = Physics.BoxCast(_playerCollider.bounds.center, transform.localScale, Vector3.forward, out _interactHit, Camera.main.transform.rotation, _maxCastDistance);
-        _interactColliderHitDetect = Physics.Raycast(Camera.main.transform.position, Vector3.forward, out _interactHit, _maxCastDistance);
+        _interactColliderHitDetect = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out _interactHit, _maxCastDistance);
 
         if (_interactColliderHitDetect)
         {
