@@ -212,12 +212,15 @@ namespace StarterAssets
             {
 				Debug.Log("RAYCAST SHOOT");
 				bool _hasHitEnemy = Physics.Raycast(Camera.main.ViewportToWorldPoint(new Vector3()), Camera.main.transform.forward, out shootInfo, _maxShootDistance);
-				
-				if (shootInfo.transform.gameObject.CompareTag("Enemy"))
+                
+				if (_hasHitEnemy)
                 {
-					Debug.Log($"OBJECT HIT: {shootInfo.transform.gameObject.name} / TAG: {shootInfo.transform.gameObject.tag}");
-					Destroy(shootInfo.transform.gameObject);
-                }
+					if (shootInfo.transform.gameObject.CompareTag("Enemy"))
+					{
+						Debug.Log($"OBJECT HIT: {shootInfo.transform.gameObject.name} / TAG: {shootInfo.transform.gameObject.tag}");
+						Destroy(shootInfo.transform.gameObject);
+					}
+				}
 
 				_input.shoot = false;
             }
