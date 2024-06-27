@@ -56,11 +56,13 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _EmissionStrength: 4.76
+    - _EmissionStrength: 1.52
     - _LavaExtrude: 0
     - _LavaIntensifying: 1
     - _LavaOffsetSpeed: 0.005
-    - _TextureTilingXY: 20
+    - _LavaOffsetSpeedX: 0.0125
+    - _LavaOffsetSpeedY: 0.0125
+    - _TextureTilingXY: 4.1
     m_Colors:
-    - _Color: {r: 1, g: 0.034552068, b: 0, a: 0}
+    - _Color: {r: 29.508839, g: 1.0195915, b: 0, a: 0}
   m_BuildTextureStacks: []
