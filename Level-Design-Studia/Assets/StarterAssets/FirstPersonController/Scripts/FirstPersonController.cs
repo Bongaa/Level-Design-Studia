@@ -43,6 +43,11 @@ namespace StarterAssets
 		[Tooltip("What layers the character uses as ground")]
 		public LayerMask GroundLayers;
 
+		[Header("Player Shoot")]
+		[SerializeField] private float _maxShootDistance;
+		[SerializeField] private Transform _weaponHandler;
+		public Transform WeaponHandler { get { return _weaponHandler; } set { _weaponHandler = value;} }
+
 		[Header("Cinemachine")]
 		[Tooltip("The follow target set in the Cinemachine Virtual Camera that the camera will follow")]
 		public GameObject CinemachineCameraTarget;
@@ -115,6 +120,7 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			Shoot();
 		}
 
 		private void LateUpdate()
@@ -197,6 +203,28 @@ namespace StarterAssets
 			// move the player
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 		}
+
+		private void Shoot()
+        {
+			RaycastHit shootInfo;
+
+			if (_input.shoot && _weaponHandler.childCount > 0)
+            {
+				Debug.Log("RAYCAST SHOOT");
+				bool _hasHitEnemy = Physics.Raycast(Camera.main.ViewportToWorldPoint(new Vector3()), Camera.main.transform.forward, out shootInfo, _maxShootDistance);
+                
+				if (_hasHitEnemy)
+                {
+					if (shootInfo.transform.gameObject.CompareTag("Enemy"))
+					{
+						Debug.Log($"OBJECT HIT: {shootInfo.transform.gameObject.name} / TAG: {shootInfo.transform.gameObject.tag}");
+						Destroy(shootInfo.transform.gameObject);
+					}
+				}
+
+				_input.shoot = false;
+            }
+        }
 
 		private void JumpAndGravity()
 		{
